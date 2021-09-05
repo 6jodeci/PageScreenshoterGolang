@@ -63,3 +63,5 @@ func ScreenshotTasks(url string, imageBuf *[]byte) chromedp.Tasks {
 		}),
 	}
 }
+
+//rework

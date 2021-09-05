@@ -15,14 +15,14 @@ func main() {
 	defer cancel()
 
 	var buf []byte
-	if err := chromedp.Run(ctx, elementScreenshot(`https://afisha.yandex.ru/info/cinema`, `#main`, &buf)); err != nil {
+	if err := chromedp.Run(ctx, elementScreenshot(`https://www.webull.com/quote/nasdaq-clov`, `div.jss1bsn6j0`, &buf)); err != nil {
 		log.Fatal(err)
 	}
 	if err := ioutil.WriteFile("elementScreenshot.png", buf, 0o644); err != nil {
 		log.Fatal(err)
 	}
 
-	if err := chromedp.Run(ctx, fullScreenshot(`https://afisha.yandex.ru/info/cinema`, 90, &buf)); err != nil {
+	if err := chromedp.Run(ctx, fullScreenshot(`https://www.webull.com/quote/nasdaq-clov`, 90, &buf)); err != nil {
 		log.Fatal(err)
 	}
 	if err := ioutil.WriteFile("fullScreenshot.png", buf, 0o644); err != nil {

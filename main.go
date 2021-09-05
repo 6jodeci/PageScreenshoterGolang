@@ -12,11 +12,9 @@ import (
 )
 
 func main() {
-	// Стартуем хром
+	// запускаеься холм
 	ctx, cancel := chromedp.NewContext(context.Background())
-	// Не забываем, что его надо закрыть
-	// при выходе из main вызовется cancel и он передаст
-	// хрому о закрытии
+	//дефёр закрытия хрома
 	defer cancel()
 
 	// первым аргументом скрипт принимает адрес страницы
@@ -32,7 +30,7 @@ func main() {
 		filename = slug.Make(url) + ".png"
 	}
 
-	// инициализируем пустой массив, куда будет сохранен скриншот
+	// пустой массив, куда будет сохранен скриншот
 	var imageBuf []byte
 
 	// и отправляем хрому задачи, которые он должен выполнить
@@ -63,5 +61,3 @@ func ScreenshotTasks(url string, imageBuf *[]byte) chromedp.Tasks {
 		}),
 	}
 }
-
-//rework

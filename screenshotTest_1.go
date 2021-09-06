@@ -18,14 +18,14 @@ func main() {
 	if err := chromedp.Run(ctx, elementScreenshot(`https://www.webull.com/quote/nasdaq-clov`, `div.jss1bsn6j0`, &buf)); err != nil {
 		log.Fatal(err)
 	}
-	if err := ioutil.WriteFile("elementScreenshot.png", buf, 0o644); err != nil {
+	if err := ioutil.WriteFile("elementScreenshot.png", buf, 0644); err != nil {
 		log.Fatal(err)
 	}
 
 	if err := chromedp.Run(ctx, fullScreenshot(`https://www.webull.com/quote/nasdaq-clov`, 90, &buf)); err != nil {
 		log.Fatal(err)
 	}
-	if err := ioutil.WriteFile("fullScreenshot.png", buf, 0o644); err != nil {
+	if err := ioutil.WriteFile("fullScreenshot.png", buf, 0644); err != nil {
 		log.Fatal(err)
 	}
 
